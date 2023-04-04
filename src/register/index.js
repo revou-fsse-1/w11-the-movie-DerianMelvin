@@ -30,7 +30,7 @@ const removeError = (elementId) => {
 
 const validateUsername = (inputValue) => {
   if (inputValue.length === 0) {
-    displayError(errorUsernameRegister, "Invalid username");
+    displayError(errorUsernameRegister, "Username is empty");
     usernameValid = false;
   } else {
     removeError(errorUsernameRegister);
@@ -40,7 +40,7 @@ const validateUsername = (inputValue) => {
 
 const validateEmail = (inputValue) => {
   if (inputValue.length === 0) {
-    displayError(errorEmailRegister, "Invalid email");
+    displayError(errorEmailRegister, "Email is empty");
     emailValid = false;
   } else {
     removeError(errorEmailRegister);

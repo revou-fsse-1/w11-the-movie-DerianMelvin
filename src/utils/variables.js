@@ -1,7 +1,10 @@
 // Login Page
-export const formLogin = document.getElementById("formLogin");
+export const formLogIn = document.getElementById("formLogIn");
 export const usernameLogIn = document.getElementById("usernameLogIn");
 export const passwordLogIn = document.getElementById("passwordLogIn");
+export const errorUsernameLogIn = document.getElementById("errorUsernameLogIn");
+export const errorPasswordLogIn = document.getElementById("errorPasswordLogIn");
+export const errorSubmit = document.getElementById("errorSubmit");
 
 // Register Page
 export const formRegister = document.getElementById("formRegister");
