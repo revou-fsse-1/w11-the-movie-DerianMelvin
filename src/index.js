@@ -25,7 +25,7 @@ const removeError = (elementId) => {
 };
 
 const getUser = async () => {
-  const response = await fetch(`${API_USERS}?username=${usernameLogIn.value}`);
+  const response = await fetch(`${API_USERS}?username=${usernameLogIn.value}&password=${passwordLogIn.value}`);
   const user = await response.json();
   return user[0];
 };
