@@ -16,3 +16,11 @@ export const errorUsernameRegister = document.getElementById("errorUsernameRegis
 export const errorEmailRegister = document.getElementById("errorEmailRegister");
 export const errorPassword = document.getElementById("errorPassword");
 export const registerSuccess = document.getElementById("registerSuccess");
+
+// Movie Page
+export const formSearch = document.getElementById("formSearch");
+export const searchMovieInput = document.getElementById("searchMovieInput");
+export const btnWatchlist = document.getElementById("btnWatchlist");
+export const currentWatchlist = document.getElementById("currentWatchlist");
+export const suggestedList = document.getElementById("suggestedList");
+export const previouslyWatchedList = document.getElementById("previouslyWatchedList");
