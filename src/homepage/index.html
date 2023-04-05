@@ -10,7 +10,8 @@
   <body class="bg-gray-100">
     <div class="container mx-auto my-10 px-4 flex flex-col items-center gap-5 md:px-20">
       <div class="w-full max-w-7xl flex items-center justify-between gap-5">
-        <h1 class="w-32 text-4xl font-bold leading-tight">The Movie Watchlist</h1>
+        <h1 class="text-4xl font-bold leading-tight">The<br />Movie<br />Watchlist<br /></h1>
+
         <form id="formSearch" class="w-1/5 flex items-center justify-center md:w-2/5">
           <label for="search" class="sr-only">Search</label>
           <div class="w-full flex relative">
@@ -18,21 +19,25 @@
             <input type="text" name="search" id="searchMovieInput" placeholder="Search a movie or a series" class="w-4 px-5 py-3 pl-12 bg-gray-200 rounded-full text-center placeholder-gray-600 md:w-full" />
           </div>
         </form>
+
         <div id="btnWatchlist" class="flex items-center gap-1 px-2 md:px-5 py-2 rounded-full bg-gray-200 cursor-pointer md:rounded-2xl">
           <img src="/src/assets/icon-bookmark.svg" alt="watchlist" class="w-9 object-contain object-center">
           <p class="text-xl font-bold hidden md:block">Watchlist</p>
         </div>
       </div>
+
       <div class="w-full max-w-7xl flex flex-col justify-between gap-6 md:flex-row md:mb-8">
         <div class="flex flex-col gap-2">
           <h2 class="text-lg font-bold">Currently Watching</h2>
           <div id="currentWatchlist" class="flex gap-4 grow overflow-x-auto"></div>
         </div>
+
         <div class="flex flex-col gap-2">
           <h2 class="text-lg font-bold">Suggested To Watch</h2>
           <div id="suggestedList" class="flex gap-4 overflow-x-auto"></div>
         </div>
       </div>
+      
       <div class="w-full max-w-7xl flex flex-col justify-between gap-6 md:flex-row">
         <div class="flex flex-col gap-2">
           <h2 class="text-lg font-bold">Previously Watched</h2>
