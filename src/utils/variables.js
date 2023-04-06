@@ -32,3 +32,6 @@ export const movieContent = document.getElementById("movieContent");
 export const movieImage = document.getElementById("movieImage");
 export const movieDetails = document.getElementById("movieDetails");
 export const movieGenreList = document.getElementById("movieGenreList");
+export const btnToggleSearch = document.getElementById("btnToggleSearch");
+export const formSearchMobile = document.getElementById("formSearchMobile");
+export const searchMovieInputMobile = document.getElementById("searchMovieInputMobile");

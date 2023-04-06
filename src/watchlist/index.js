@@ -1,18 +1,12 @@
 import {
   formSearch,
   searchMovieInput,
-  currentWatchlist,
-  suggestedList,
-  previouslyWatchedList,
+  myWatchlist,
   btnToggleSearch,
   formSearchMobile,
   searchMovieInputMobile,
 } from "../utils/variables.js";
-import {
-  API_CURRENT_WATCH,
-  API_SUGGESTED,
-  API_PREVIOUS,
-} from "../utils/constants.js";
+import { API_WATCHLIST } from "../utils/constants.js";
 
 /* 
   ================================================
@@ -52,20 +46,10 @@ const toggleSearchBar = () => {
   ================================================
 */
 window.onload = async () => {
-  const currentlyWatchingData = await getDataFromAPI(API_CURRENT_WATCH);
-  const suggestedData = await getDataFromAPI(API_SUGGESTED);
-  const previousData = await getDataFromAPI(API_PREVIOUS);
+  const myWatchlistData = await getDataFromAPI(API_WATCHLIST);
 
-  currentlyWatchingData.forEach((movie) => {
-    displayMovieImage(currentWatchlist, movie.image, movie.title, movie.rating, movie.id);
-  });
-
-  suggestedData.forEach((movie) => {
-    displayMovieImage(suggestedList, movie.image, movie.title, movie.rating, movie.id);
-  });
-
-  previousData.forEach((movie) => {
-    displayMovieImage(previouslyWatchedList, movie.image, movie.title, movie.rating, movie.id);
+  myWatchlistData.forEach((movie) => {
+    displayMovieImage(myWatchlist, movie.image, movie.title, movie.rating, movie.id);
   });
 };
 

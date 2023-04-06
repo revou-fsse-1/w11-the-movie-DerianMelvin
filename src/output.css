@@ -1036,6 +1036,10 @@ video {
     display: block;
   }
 
+  .sm\:hidden {
+    display: none;
+  }
+
   .sm\:h-80 {
     height: 20rem;
   }
@@ -1070,6 +1074,10 @@ video {
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:h-80 {
@@ -1109,6 +1117,11 @@ video {
   .md\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .md\:px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
   }
 
   .md\:text-left {
@@ -1166,6 +1179,11 @@ video {
   .lg\:px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+  }
+
+  .lg\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .lg\:text-5xl {

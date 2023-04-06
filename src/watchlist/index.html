@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/src/output.css" rel="stylesheet" />
-    <title>The Movie Watchlist | Homepage</title>
+    <title>The Movie Watchlist | Watchlist</title>
   </head>
   <body class="bg-gray-100">
     <div class="container mx-auto my-10 px-4 flex flex-col items-center gap-5 md:px-14 lg:px-20">
@@ -24,9 +24,9 @@
           <div id="btnToggleSearch" class="flex items-center gap-1 px-2 py-2 rounded-full bg-gray-200 cursor-pointer md:px-5 md:rounded-2xl md:hidden">
             <img src="/src/assets/icon-search.svg" alt="search" class="w-9 object-contain object-center">
           </div>
-          <a href="../watchlist/index.html" class="flex items-center gap-1 px-2 py-2 rounded-full bg-gray-200 md:px-5 md:rounded-2xl">
-            <img src="/src/assets/icon-bookmark.svg" alt="watchlist" class="w-8 object-contain object-center">
-            <p class="text-xl font-bold hidden md:block">Watchlist</p>
+          <a href="../homepage/index.html" class="flex items-center gap-1 px-2 py-2 rounded-full bg-gray-200 md:px-4 md:rounded-2xl">
+            <img src="/src/assets/icon-back.svg" alt="back to home" class="w-8 object-contain object-center">
+            <p class="text-xl font-bold hidden md:block">Home</p>
           </a>
         </div>
       </header>
@@ -36,26 +36,14 @@
         <input type="text" name="searchMobile" id="searchMovieInputMobile" placeholder="Search a movie or a series" class="w-full px-5 py-3 pl-12 bg-gray-200 rounded-full text-center placeholder-gray-600" />
       </form>
 
-      <div class="w-full max-w-7xl flex flex-col justify-between gap-6 md:flex-row md:mb-8">
-        <section class="flex flex-col gap-2">
-          <h2 class="text-lg font-bold">Currently Watching</h2>
-          <div id="currentWatchlist" class="flex gap-4 grow overflow-x-auto"></div>
-        </section>
-
-        <section class="flex flex-col gap-2">
-          <h2 class="text-lg font-bold">Suggested To Watch</h2>
-          <div id="suggestedList" class="flex gap-4 overflow-x-auto"></div>
-        </section>
-      </div>
-      
       <div class="w-full max-w-7xl flex flex-col justify-between gap-6 md:flex-row">
         <section class="flex flex-col gap-2">
-          <h2 class="text-lg font-bold">Previously Watched</h2>
-          <div id="previouslyWatchedList" class="flex gap-4 grow flex-wrap overflow-x-auto"></div>
+          <h2 class="text-lg font-bold">My Watchlist</h2>
+          <div id="myWatchlist" class="flex gap-4 grow flex-wrap overflow-x-auto"></div>
         </section>
       </div>
     </div>
 
-    <script defer type="module" src="/src/homepage/index.js"></script>
+    <script defer type="module" src="/src/watchlist/index.js"></script>
   </body>
 </html>
