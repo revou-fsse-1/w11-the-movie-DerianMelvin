@@ -20,7 +20,15 @@ export const registerSuccess = document.getElementById("registerSuccess");
 // Movie Page
 export const formSearch = document.getElementById("formSearch");
 export const searchMovieInput = document.getElementById("searchMovieInput");
-export const btnWatchlist = document.getElementById("btnWatchlist");
 export const currentWatchlist = document.getElementById("currentWatchlist");
 export const suggestedList = document.getElementById("suggestedList");
 export const previouslyWatchedList = document.getElementById("previouslyWatchedList");
+export const myWatchlist = document.getElementById("myWatchlist");
+
+// Movie Details Page
+export const movieTitle = document.getElementById("movieTitle");
+export const btnAddToWatchlist = document.getElementById("btnAddToWatchlist");
+export const movieContent = document.getElementById("movieContent");
+export const movieImage = document.getElementById("movieImage");
+export const movieDetails = document.getElementById("movieDetails");
+export const movieGenreList = document.getElementById("movieGenreList");
