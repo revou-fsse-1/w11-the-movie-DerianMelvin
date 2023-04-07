@@ -8,7 +8,7 @@ import {
   errorEmailRegister,
   errorPassword,
   registerSuccess,
-} from "/src/utils/variables.js";
+} from "../utils/variables.js";
 import { API_USERS } from "../utils/constants.js";
 import { displayError, removeError } from "../utils/functions.js";
 
