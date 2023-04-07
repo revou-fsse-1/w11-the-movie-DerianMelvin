@@ -28,6 +28,7 @@ export const myWatchlist = document.getElementById("myWatchlist");
 // Movie Details Page
 export const movieTitle = document.getElementById("movieTitle");
 export const btnAddToWatchlist = document.getElementById("btnAddToWatchlist");
+export const btnRemoveFromWatchlist = document.getElementById("btnRemoveFromWatchlist");
 export const movieContent = document.getElementById("movieContent");
 export const movieImage = document.getElementById("movieImage");
 export const movieDetails = document.getElementById("movieDetails");

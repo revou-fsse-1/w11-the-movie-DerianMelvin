@@ -9,31 +9,32 @@
   </head>
   <body class="bg-gray-100">
     <div class="container mx-auto my-10 px-4 flex flex-col items-center gap-5 md:px-20">
-      <header class="w-full max-w-7xl flex items-center justify-between gap-5">
-        <h1 class="text-4xl font-bold leading-tight">The<br />Movie<br />Watchlist<br /></h1>
+      <header class="w-full max-w-7xl flex items-center justify-between gap-5 pb-5 border-b border-gray-300">
+        <h1 class="text-4xl font-bold leading-tight"><a href="../homepage/index.html">The<br />Movie<br />Watchlist<br /></a></h1>
         
         <div class="flex gap-3">
-          <a href="../homepage/index.html" class="flex items-center gap-1 px-2 py-2 rounded-full bg-gray-200 sm:px-4 sm:rounded-2xl">
-            <img src="/src/assets/icon-back.svg" alt="back to home" class="w-8 object-contain object-center">
-            <p class="text-xl font-bold hidden sm:block">Back To Home</p>
-          </a>
-          <a href="../watchlist/index.html" class="flex items-center gap-1 px-2 py-2 rounded-full bg-gray-200 sm:px-5 sm:rounded-2xl">
-            <img src="/src/assets/icon-bookmark.svg" alt="watchlist" class="w-9 object-contain object-center">
+          <a href="../watchlist/index.html" class="flex items-center gap-1 px-2 py-2 rounded-full bg-gray-200 shadow-lg sm:px-5 sm:rounded-2xl">
+            <img src="/src/assets/icon-bookmark.svg" alt="watchlist" class="w-8 object-contain object-center">
             <p class="text-xl font-bold hidden sm:block">Watchlist</p>
           </a>
         </div>
       </header>
 
-      <div class="w-full max-w-7xl mt-7 flex items-center justify-between">
-        <h2 id="movieTitle" class="text-3xl font-semibold lg:text-5xl"></h2>
+      <section class="w-full max-w-7xl mt-4 flex items-center justify-between">
+        <h2 id="movieTitle" class="text-4xl font-semibold lg:text-5xl"></h2>
 
-        <button id="btnAddToWatchlist" class="flex items-center gap-1 px-2 py-2 rounded-full bg-gray-200 lg:px-5 lg:rounded-2xl">
-          <img src="/src/assets/icon-add.svg" alt="watchlist" class="w-7 object-contain object-center">
+        <button id="btnAddToWatchlist" class="flex items-center gap-1 px-2 py-2 rounded-full bg-gray-200 shadow-lg transition-all hover:bg-green-300 lg:px-5 lg:rounded-2xl">
+          <img src="/src/assets/icon-add.svg" alt="add to watchlist" class="w-7 object-contain object-center">
           <p class="text-base font-semibold hidden lg:block">Add to Watchlist</p>
         </button>
-      </div>
 
-      <div id="movieContent" class="w-full max-w-7xl mt-4 flex flex-col-reverse gap-10 lg:flex-row">
+        <button id="btnRemoveFromWatchlist" class="flex items-center gap-1 px-2 py-2 rounded-full bg-gray-200 shadow-lg transition-all hover:bg-red-200 hidden lg:px-5 lg:rounded-2xl">
+          <img src="/src/assets/icon-remove.svg" alt="remove from watchlist" class="w-7 object-contain object-center">
+          <p class="text-base font-semibold hidden lg:block">Remove from Watchlist</p>
+        </button>
+      </section>
+
+      <section id="movieContent" class="w-full max-w-7xl mt-2 flex flex-col-reverse gap-10 lg:flex-row">
         <div class="w-full lg:w-3/5 flex gap-4">
           <div id="movieImage" class="min-w-max relative hidden lg:flex"></div>
 
@@ -41,7 +42,7 @@
             <div id="movieGenreList" class="flex gap-3 flex-wrap"></div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
 
     <script defer type="module" src="/src/movie/index.js"></script>
