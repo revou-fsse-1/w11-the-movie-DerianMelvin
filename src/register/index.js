@@ -10,6 +10,7 @@ import {
   registerSuccess,
 } from "/src/utils/variables.js";
 import { API_USERS } from "../utils/constants.js";
+import { displayError, removeError } from "../utils/functions.js";
 
 let usernameValid = false;
 let emailValid = false;
@@ -20,14 +21,6 @@ let passwordValid = false;
     FUNCTIONS
   ================================================
 */
-const displayError = (elementId, errorMsg) => {
-  elementId.innerHTML = errorMsg;
-};
-
-const removeError = (elementId) => {
-  elementId.innerHTML = "";
-};
-
 const validateUsername = (inputValue) => {
   if (inputValue.length === 0) {
     displayError(errorUsernameRegister, "Username is empty");

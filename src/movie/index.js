@@ -8,18 +8,13 @@ import {
   movieGenreList,
 } from "../utils/variables.js";
 import { API_MOVIES, API_WATCHLIST } from "../utils/constants.js";
+import { getDataFromAPI } from "../utils/functions.js";
 
 /* 
   ================================================
     FUNCTIONS
   ================================================
 */
-const getDataFromAPI = async (currentAPI) => {
-  const response = await fetch(currentAPI);
-  const result = await response.json();
-  return result;
-};
-
 const assignMovieData = (movieData) => {
   const title = movieData.title;
   const trailer = movieData.trailer;
@@ -47,7 +42,7 @@ const assignMovieData = (movieData) => {
       <span class="text-lg font-semibold">⭐ ${rating} / 10</span>
     </div>
   `);
-  genre.forEach(text => {
+  genre.forEach((text) => {
     movieGenreList.insertAdjacentHTML(insertPosition, `
       <p class="px-5 py-1 rounded-full border border-gray-400 transition-all hover:border-transparent hover:bg-gray-200">${text}</p>
     `);
@@ -69,9 +64,9 @@ const addMovieToWatchlist = async (movieData) => {
     toggleWatchlistButton();
     alert("Movie successfully added to your watchlist!");
   } catch (error) {
-    alert("ERROR! Movie has already been added to the watchlist.")
-  };
-}
+    alert("ERROR! Movie has already been added to the watchlist.");
+  }
+};
 
 const removeMovieFromWatchlist = async (movieId) => {
   const params = {
@@ -84,9 +79,9 @@ const removeMovieFromWatchlist = async (movieId) => {
     toggleWatchlistButton();
     alert("Movie removed from your watchlist!");
   } catch (error) {
-    alert("ERROR! Movie is not on the watchlist.")
-  };
-}
+    alert("ERROR! Movie is not on the watchlist.");
+  }
+};
 
 const isMovieInWatchlist = async (movieId) => {
   const response = await fetch(`${API_WATCHLIST}/${movieId}`);
@@ -94,7 +89,7 @@ const isMovieInWatchlist = async (movieId) => {
   const movieExist = Object.keys(json).length !== 0;
 
   return movieExist ? true : false;
-}
+};
 
 const toggleWatchlistButton = () => {
   const isHidden = btnRemoveFromWatchlist.classList.contains("hidden");
@@ -105,7 +100,7 @@ const toggleWatchlistButton = () => {
     btnRemoveFromWatchlist.classList.add("hidden");
     btnAddToWatchlist.classList.remove("hidden");
   }
-}
+};
 
 /* 
   ================================================
@@ -121,14 +116,14 @@ window.onload = async () => {
   // Insert HTML elements using data from movie
   assignMovieData(movieData);
 
-  btnAddToWatchlist.addEventListener('click', () => {
+  btnAddToWatchlist.addEventListener("click", () => {
     addMovieToWatchlist(movieData);
   });
 
-  btnRemoveFromWatchlist.addEventListener('click', () => {
+  btnRemoveFromWatchlist.addEventListener("click", () => {
     removeMovieFromWatchlist(movieData.id);
   });
-  
+
   if (movieInWatchlist) {
     toggleWatchlistButton();
   }

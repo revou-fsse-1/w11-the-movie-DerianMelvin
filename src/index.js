@@ -8,6 +8,7 @@ import {
   logInSuccess,
 } from "./utils/variables.js";
 import { API_USERS } from "./utils/constants.js";
+import { displayError, removeError } from "./utils/functions.js";
 
 let usernameValid = false;
 let passwordValid = false;
@@ -17,14 +18,6 @@ let passwordValid = false;
     FUNCTIONS
   ================================================
 */
-const displayError = (elementId, errorMsg) => {
-  elementId.innerHTML = errorMsg;
-};
-
-const removeError = (elementId) => {
-  elementId.innerHTML = "";
-};
-
 const getUser = async () => {
   const response = await fetch(
     `${API_USERS}?username=${usernameLogIn.value}&password=${passwordLogIn.value}`
