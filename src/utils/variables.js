@@ -25,6 +25,11 @@ export const currentWatchlist = document.getElementById("currentWatchlist");
 export const suggestedList = document.getElementById("suggestedList");
 export const previouslyWatchedList = document.getElementById("previouslyWatchedList");
 export const myWatchlist = document.getElementById("myWatchlist");
+export const emptyWatchlist = document.getElementById("emptyWatchlist");
+export const emptyCurrentlyWatching = document.getElementById("emptyCurrentlyWatching");
+export const emptySuggestedList = document.getElementById("emptySuggestedList");
+export const emptyPreviouslyWatchedList = document.getElementById("emptyPreviouslyWatchedList");
+
 
 // Movie Details Page
 export const movieTitle = document.getElementById("movieTitle");

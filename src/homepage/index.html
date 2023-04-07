@@ -46,21 +46,33 @@
       </form>
 
       <div class="w-full max-w-7xl flex flex-col justify-between gap-6 md:flex-row pb-8 border-b border-gray-300">
-        <section class="flex flex-col gap-2">
+        <section class="w-full flex flex-col gap-2 overflow-x-auto">
           <h2 class="text-lg font-bold">Currently Watching</h2>
-          <div id="currentWatchlist" class="flex gap-4 grow overflow-x-auto"></div>
+          <div id="currentWatchlist" class="flex gap-4 overflow-x-auto"></div>
+          <div id="emptyCurrentlyWatching" class="w-full my-7 flex flex-col gap-4 items-center text-center overflow-x-auto hidden">
+            <h2 class="text-2xl font-medium">📺 You're not watching anything currently...</h2>
+            <p class="text-lg">Let's find some movies to watch!</p>
+          </div>
         </section>
 
-        <section class="flex flex-col gap-2">
+        <section class="w-full flex flex-col gap-2 overflow-x-auto">
           <h2 class="text-lg font-bold">Suggested To Watch</h2>
           <div id="suggestedList" class="flex gap-4 overflow-x-auto"></div>
+          <div id="emptySuggestedList" class="w-full my-7 flex flex-col gap-4 items-center text-center overflow-x-auto hidden">
+            <h2 class="text-2xl font-medium">🖼️ There are no suggestions currently...</h2>
+            <p class="text-lg">Let's explore and find some!</p>
+          </div>
         </section>
       </div>
       
       <div class="w-full max-w-7xl flex flex-col justify-between gap-6 md:flex-row">
-        <section class="flex flex-col gap-2">
+        <section class="w-full flex flex-col gap-2">
           <h2 class="text-lg font-bold">Previously Watched</h2>
           <div id="previouslyWatchedList" class="flex gap-4 grow flex-wrap overflow-x-auto"></div>
+          <div id="emptyPreviouslyWatchedList" class="w-full my-7 flex flex-col gap-4 items-center text-center overflow-x-auto hidden">
+            <h2 class="text-2xl font-medium">🎥 You haven't watched anything yet...</h2>
+            <p class="text-lg">Explore and pick your first movie now!</p>
+          </div>
         </section>
       </div>
     </div>

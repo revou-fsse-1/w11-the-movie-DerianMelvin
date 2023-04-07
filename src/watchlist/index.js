@@ -2,6 +2,7 @@ import {
   formSearch,
   searchMovieInput,
   myWatchlist,
+  emptyWatchlist,
   btnToggleSearch,
   formSearchMobile,
   searchMovieInputMobile,
@@ -11,6 +12,7 @@ import {
   getDataFromAPI,
   displayMovieImage,
   toggleSearchBar,
+  displayEmptyAPIResult,
 } from "../utils/functions.js";
 
 /* 
@@ -27,9 +29,13 @@ import {
 window.onload = async () => {
   const myWatchlistData = await getDataFromAPI(API_WATCHLIST);
 
-  myWatchlistData.forEach((movie) => {
-    displayMovieImage(myWatchlist, movie.image, movie.title, movie.rating, movie.id);
-  });
+  if (myWatchlistData.length === 0) {
+    displayEmptyAPIResult(emptyWatchlist);
+  } else {
+    myWatchlistData.forEach((movie) => {
+      displayMovieImage(myWatchlist, movie.image, movie.title, movie.rating, movie.id);
+    });
+  };
 };
 
 btnToggleSearch.addEventListener("click", () => {

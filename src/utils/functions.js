@@ -33,3 +33,7 @@ export const toggleSearchBar = (elementId) => {
     elementId.classList.add("hidden");
   }
 }
+
+export const displayEmptyAPIResult = (elementId) => {
+  elementId.classList.remove("hidden");
+}

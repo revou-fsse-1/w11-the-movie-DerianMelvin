@@ -4,6 +4,9 @@ import {
   currentWatchlist,
   suggestedList,
   previouslyWatchedList,
+  emptyCurrentlyWatching,
+  emptySuggestedList,
+  emptyPreviouslyWatchedList,
   btnToggleSearch,
   formSearchMobile,
   searchMovieInputMobile,
@@ -17,6 +20,7 @@ import {
   getDataFromAPI,
   displayMovieImage,
   toggleSearchBar,
+  displayEmptyAPIResult,
 } from "../utils/functions.js";
 
 /* 
@@ -35,17 +39,29 @@ window.onload = async () => {
   const suggestedData = await getDataFromAPI(API_SUGGESTED);
   const previousData = await getDataFromAPI(API_PREVIOUS);
 
-  currentlyWatchingData.forEach((movie) => {
-    displayMovieImage(currentWatchlist, movie.image, movie.title, movie.rating, movie.id);
-  });
+  if (currentlyWatchingData.length === 0) {
+    displayEmptyAPIResult(emptyCurrentlyWatching);
+  } else {
+    currentlyWatchingData.forEach((movie) => {
+      displayMovieImage(currentWatchlist, movie.image, movie.title, movie.rating, movie.id);
+    });
+  };
 
-  suggestedData.forEach((movie) => {
-    displayMovieImage(suggestedList, movie.image, movie.title, movie.rating, movie.id);
-  });
+  if (suggestedData.length === 0) {
+    displayEmptyAPIResult(emptySuggestedList);
+  } else {
+    suggestedData.forEach((movie) => {
+      displayMovieImage(suggestedList, movie.image, movie.title, movie.rating, movie.id);
+    });
+  };
 
-  previousData.forEach((movie) => {
-    displayMovieImage(previouslyWatchedList, movie.image, movie.title, movie.rating, movie.id);
-  });
+  if (previousData.length === 0) {
+    displayEmptyAPIResult(emptyPreviouslyWatchedList);
+  } else {
+    previousData.forEach((movie) => {
+      displayMovieImage(previouslyWatchedList, movie.image, movie.title, movie.rating, movie.id);
+    });
+  };
 };
 
 btnToggleSearch.addEventListener("click", () => {
