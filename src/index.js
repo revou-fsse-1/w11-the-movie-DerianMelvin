@@ -5,6 +5,7 @@ import {
   errorUsernameLogIn,
   errorPasswordLogIn,
   errorSubmit,
+  logInSuccess,
 } from "./utils/variables.js";
 import { API_USERS } from "./utils/constants.js";
 
@@ -25,7 +26,9 @@ const removeError = (elementId) => {
 };
 
 const getUser = async () => {
-  const response = await fetch(`${API_USERS}?username=${usernameLogIn.value}&password=${passwordLogIn.value}`);
+  const response = await fetch(
+    `${API_USERS}?username=${usernameLogIn.value}&password=${passwordLogIn.value}`
+  );
   const user = await response.json();
   return user[0];
 };
@@ -57,6 +60,13 @@ const displaySubmitError = () => {
   }, 1500);
 };
 
+const displayLogInSuccess = () => {
+  logInSuccess.classList.remove("hidden");
+  setTimeout(() => {
+    window.location.href = "./homepage/index.html";
+  }, 1100);
+};
+
 /* 
   ================================================
     EVENT LISTENERS
@@ -81,7 +91,7 @@ formLogIn.addEventListener("submit", async (e) => {
     } else if (passwordLogIn.value !== user.password) {
       displaySubmitError();
     } else {
-      window.location.href = "./homepage/index.html";
+      displayLogInSuccess();
     }
   } else {
     validateUsername(usernameLogIn.value);

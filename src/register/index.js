@@ -66,7 +66,25 @@ const validatePassword = () => {
 
 const displayRegisterSuccess = () => {
   registerSuccess.classList.remove("hidden");
-  window.location.href = "../index.html";
+
+  setTimeout(async () => {
+    const params = {
+      method: "POST",
+      body: JSON.stringify({
+        username: usernameRegister.value,
+        email: emailRegister.value,
+        password: passwordRegister.value,
+      }),
+      headers: {
+        "Content-type": "application/json",
+      },
+    };
+
+    const response = await fetch(API_USERS, params);
+    const result = await response.json();
+
+    window.location.href = "../index.html";
+  }, 1100);
 };
 
 /* 
@@ -88,20 +106,6 @@ formRegister.addEventListener("submit", async (e) => {
   validatePassword();
 
   if (usernameValid && emailValid && passwordValid) {
-    const params = {
-      method: "POST",
-      body: JSON.stringify({
-        username: usernameRegister.value,
-        email: emailRegister.value,
-        password: passwordRegister.value,
-      }),
-      headers: {
-        "Content-type": "application/json",
-      },
-    };
-
-    const response = await fetch(API_USERS, params);
-    const result = await response.json();
     displayRegisterSuccess();
   } else {
     validateUsername(usernameRegister.value);

@@ -5,6 +5,7 @@ export const passwordLogIn = document.getElementById("passwordLogIn");
 export const errorUsernameLogIn = document.getElementById("errorUsernameLogIn");
 export const errorPasswordLogIn = document.getElementById("errorPasswordLogIn");
 export const errorSubmit = document.getElementById("errorSubmit");
+export const logInSuccess = document.getElementById("logInSuccess");
 
 // Register Page
 export const formRegister = document.getElementById("formRegister");
